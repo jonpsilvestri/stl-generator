@@ -20,7 +20,7 @@ clear executables with
 
 ### Default Output
 
-![circles](spheres.png)
+<img src="spheres.png" alt="Alt Text" width="300" height="200">
 
 ![fractals](fractals.png)
 
