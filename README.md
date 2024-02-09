@@ -18,3 +18,9 @@ clear executables with
 
 ```make clean```
 
+### Default Output
+
+![circles](spheres.png)
+
+![fractals](fractals.png)
+
