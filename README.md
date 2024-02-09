@@ -22,5 +22,9 @@ clear executables with
 
 <img src="spheres.png" alt="spheres" width="350" height="250">
 
+```spheres.stl```
+
 <img src="fractals.png" alt="Alt Text" width="350" height="250">
+
+```fractals.stl```
 
