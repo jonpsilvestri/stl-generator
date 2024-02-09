@@ -11,7 +11,10 @@ I plan to implement the ability to allow a user to pass in a shape name, size, a
 clone this repository
 
 ```make```
+
 ```./generator```
+
 clear executables with
+
 ```make clean```
 
