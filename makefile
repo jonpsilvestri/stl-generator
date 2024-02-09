@@ -5,3 +5,6 @@ generator: generator.c 3d.o
 clean:
 	rm -f 3d.o
 	rm -f generator
+	rm -f fractals.stl
+	rm -f sierpinski.stl
+	rm -f spheres.stl

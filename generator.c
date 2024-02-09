@@ -11,12 +11,41 @@ Description:	generates different stuff using the 3d library to make .stl files
 
 void spheres();
 void fractals();
+void sierpinski(int);
+void sierpinski_r(Scene3D*, Coordinate3D, double, double, int);
 
 int main(void){
 	fractals();
 	spheres();
+	sierpinski(6);
 	return 0;
 }
+
+void sierpinski(int depth){
+	Scene3D* s = Scene3D_create();
+	Coordinate3D origin = (Coordinate3D){100, 100, 100};
+	sierpinski_r(s, origin, 100.0, 100.0, depth);
+	Scene3D_write_stl_text(s, "sierpinski.stl");
+	Scene3D_destroy(s);
+}
+
+void sierpinski_r(Scene3D* scene, Coordinate3D origin, double width, double height, int depth) {
+    if (depth == 0) {
+        Scene3D_add_pyramid(scene, origin, width, height, "up");
+    } else {
+        double new_width = width / 2;
+        double new_height = height / 2;
+        Coordinate3D top_point = {origin.x, origin.y, origin.z + new_height};
+        Coordinate3D left_point = {origin.x - new_width, origin.y + new_height, origin.z};
+        Coordinate3D right_point = {origin.x + new_width, origin.y + new_height, origin.z};
+
+        sierpinski_r(scene, origin, new_width, new_height, depth - 1);
+        sierpinski_r(scene, top_point, new_width, new_height, depth - 1);
+        sierpinski_r(scene, left_point, new_width, new_height, depth - 1);
+        sierpinski_r(scene, right_point, new_width, new_height, depth - 1);
+    }
+}
+
 
 void fractals(){
 	Scene3D* s = Scene3D_create();
