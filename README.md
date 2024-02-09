@@ -18,7 +18,7 @@ clear executables with
 
 ```make clean```
 
-### Default Output
+## Default Output
 
 <img src="spheres.png" alt="spheres" width="350" height="250">
 
